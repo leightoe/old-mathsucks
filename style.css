@@ -1,0 +1,392 @@
+/* 2024 Mathsucks.World */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background: white;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 3.5%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 99;
+    border-radius: 8px 8px 0 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    cursor: default;
+    overflow: hidden;
+}
+
+footer .watermark {
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+
+footer a {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+footer #beta {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(163, 53, 53);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, .3);
+    padding-bottom: 1px;
+    padding-right: 4px;
+    transition: .2s;
+    top: 0;
+}
+
+footer #beta span {
+    vertical-align: middle;
+    text-align: center;
+}
+
+footer #beta:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#betainfo {
+    position: fixed;
+    display: block;
+    bottom: -500%;
+    left: 30%;
+    margin: auto;
+    z-index: 100;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    text-align: center;
+    padding: 3px;
+    opacity: 0;
+    box-shadow: 3px 3px 2px 1px rgba(15, 15, 24, 0.164);
+    transition: .3s .1s;
+}
+
+#betainfo span {
+    color: rgb(163, 53, 53);
+}
+
+.btn {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    text-align: center;
+    bottom: 0%;
+    left: 10%;
+    padding: .3%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+
+#nav {
+    position: fixed;
+    display: block;
+    width: 3%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    margin: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 30px 0px 0px 30px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    transition: .3s;
+    will-change: width, height, top;
+}
+
+#nav:hover {
+    width: 25%;
+    height: 95%;
+    top: 2.5%;
+    background-color: rgba(0, 0, 0, .7);
+    box-shadow: 12px 12px 2px 1px rgba(60, 60, 60, 0.545);
+}
+
+#nav:hover .navtop {
+    opacity: 100%;
+    transition: 1s;
+}
+
+#nav .container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+    margin: 5%;
+    border-radius: 18px;
+    opacity: 0;
+}
+#nav:hover .container {
+    animation: fade-in 1s forwards;
+}
+
+#nav .container span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+    padding: 10%;
+}
+#nav .container span:hover {
+    color: black;
+}
+
+.navtop {
+    width: 100%;
+    height: 8%;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2vw;
+    letter-spacing: 6px;
+    line-height: 8vh;
+    opacity: 0%;
+    transition: .2s;
+}
+
+.navtop p {
+    color: white;
+    cursor: default;
+    overflow: hidden;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+}
+
+.navtop span {
+    opacity: 0;
+    filter: blur(4px);
+}
+
+#nav:hover .navtop span:nth-child(1) {
+    animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+#nav:hover .navtop span:nth-child(2) {
+    animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
+
+.navtop:hover {
+    scale: 1.01;
+    border-radius: 24px;
+    letter-spacing: 7px;
+    animation: navtopbg 18s ease infinite;
+}
+
+@keyframes navtopbg {
+    0% {
+        background-position: 0% 50%;
+    }
+      50% {
+        background-position: 100% 50%;
+    }
+      100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navtop:active {
+    letter-spacing: 8px;
+}
+
+
+#cardcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 6%;
+    padding: 10px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.gcard  {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    border-radius: 28px;
+    overflow: hidden;
+    background-color: grey;
+    background-position: center;
+    background-size: 130px;
+    box-shadow: 5px 5px 4px 1px rgba(15, 15, 24, 0.164);
+    opacity: 90%;
+    transition: .4s;
+    will-change: transform, opacity, box-shadow;
+}
+
+.gcard:hover {
+    transform: scale(1.1);
+    background-size: 124px;
+    opacity: 100%;
+    box-shadow: 12px 12px 2px 1px rgba(30, 30, 46, 0.2);
+}
+
+.gcard:active {
+    z-index: 10;
+    scale: 1.15;
+    box-shadow: none;
+    transition: .1s;
+}
+
+.gcardstrip {
+    display: inline-block;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, .3);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: .2s;
+}
+
+@keyframes textscroll {
+    from {
+      margin-left: 10px;
+    }
+  
+    to {
+      margin-left: -200px;
+    }
+}
+
+.gcardstrip p {
+    margin: 3px 10px;
+}
+
+.gcard:hover .gcardstrip {
+    height: 30%;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 28px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.gcard:hover .gcardstrip p {
+    margin: 8px 10px;
+    animation-delay: .5s;
+    animation-duration: 5s;
+    animation-name: textscroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.gcard:active .gcardstrip {
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+    transition: .05s;
+}
+
+.gcard:active .gcardstrip p {
+    animation: textscroll;
+    margin: 50px 10px;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+
+/* bg stuff */
+
+#bg {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#bg-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    scale: 1.2;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* play stuff */
+
+#gameContainer {
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    top: 0;
+    left: 0;
+}
